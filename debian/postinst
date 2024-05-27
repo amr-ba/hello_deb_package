@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+. /usr/share/debconf/confmodule
+
+db_input critical hello/message || true
+db_go
+
+exit 0

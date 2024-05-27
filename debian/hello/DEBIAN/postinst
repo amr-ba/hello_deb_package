@@ -1,0 +1,10 @@
+
+#!/bin/sh -e
+
+# Source debconf library.
+. /usr/share/debconf/confmodule
+
+db_get hello/message
+if [ "$RET" = "false" ]; then
+    /etc/init.d/subliminal_messages start "I like debian."
+fi
